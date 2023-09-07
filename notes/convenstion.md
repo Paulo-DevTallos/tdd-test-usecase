@@ -10,6 +10,7 @@
 - Code Repetition
 - Shotgun Surgery => Quando você mexe em um recurso e reflete em vários outros
 - Long Parameter List
+- Primitive Obssession
 
 # Design Patterns / Principles / Conventions
 
