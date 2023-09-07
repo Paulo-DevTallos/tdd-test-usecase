@@ -9,6 +9,7 @@
 - Test code in production
 - Code Repetition
 - Shotgun Surgery => Quando você mexe em um recurso e reflete em vários outros
+- Long Parameter List
 
 # Design Patterns / Principles / Conventions
 
@@ -24,3 +25,4 @@
 - System Under Test (SUT) - Identificar quem você está testando
 - Diferença base de mock, stub e spy => Mock: está preocupado com o input, stub: preocupa-se com output, spy: se preocupa com os dois
 - Strategy Pattern
+- Factory Pattern
