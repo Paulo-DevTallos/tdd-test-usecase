@@ -7,6 +7,8 @@
 - Improper Instantiation - Criar instancias de forma errada
 - High Coupling - Auto acoplamento de uma classe por sua propria dependencia
 - Test code in production
+- Code Repetition
+- Shotgun Surgery => Quando você mexe em um recurso e reflete em vários outros
 
 # Design Patterns / Principles / Conventions
 
@@ -17,6 +19,8 @@
 - Base structure to test - Arrange, Act, Assert (AAA)
 - Dependency Injection (DI)
 - Repository Pattern
-- Test Doubles (Mocks)
+- Test Doubles (Mocks, Spy, Stub)
 - Small Commits
 - System Under Test (SUT) - Identificar quem você está testando
+- Diferença base de mock, stub e spy => Mock: está preocupado com o input, stub: preocupa-se com output, spy: se preocupa com os dois
+- Strategy Pattern
