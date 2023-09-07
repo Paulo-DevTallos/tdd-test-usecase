@@ -9,7 +9,10 @@ class CheckLastEventStatus {
   async perform({ groupId }: { groupId: string }): Promise<string> {
     const event = await this.loadLastEventRepository.loadLastEvent({ groupId });
 
-    return event === undefined ? "done" : "active";
+    if (event === undefined) return "done";
+
+    const now = new Date();
+    return event.endDate > now ? "active" : "inReview";
   }
 }
 
@@ -86,5 +89,16 @@ describe("CheckLastEventStatus", () => {
     const status = await sut.perform({ groupId });
 
     expect(status).toBe("active");
+  });
+
+  it("Should return status inReview when group now is after event end time", async () => {
+    const { sut, loadLastEventRepository } = makeSut();
+    loadLastEventRepository.output = {
+      endDate: new Date(new Date().getTime() - 1), // cria uma data a partir de uma outra data um pouco maior que essa data
+    };
+
+    const status = await sut.perform({ groupId });
+
+    expect(status).toBe("inReview");
   });
 });
