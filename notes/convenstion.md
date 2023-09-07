@@ -19,3 +19,4 @@
 - Repository Pattern
 - Test Doubles (Mocks)
 - Small Commits
+- System Under Test (SUT) - Identificar quem você está testando
