@@ -116,4 +116,15 @@ describe("CheckLastEventStatus", () => {
 
     expect(eventStatus.status).toBe("inReview");
   });
+
+  it("Should return status inReview when group now is before review time", async () => {
+    const { sut, loadLastEventRepository } = makeSut();
+    loadLastEventRepository.output = {
+      endDate: new Date(new Date().getTime() - 1), // cria uma data a partir de uma outra data um pouco maior que essa data
+    };
+
+    const eventStatus = await sut.perform({ groupId });
+
+    expect(eventStatus.status).toBe("inReview");
+  });
 });
